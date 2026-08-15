@@ -3,7 +3,6 @@
 # 🔔 D3XL Notification System V1
 
 ### Ultra Modern, Standalone, Cyberpunk Toast Notification System for FiveM
-*Inspired by tgiann.com aesthetics with `#36FF9F` Neon Mint Glassmorphism*
 
 [![FiveM](https://img.shields.io/badge/FiveM-b3751%2B-brightgreen?style=for-the-badge&logo=fivem&logoColor=white)](https://fivem.net)
 [![Framework](https://img.shields.io/badge/Framework-QBCore%20%7C%20Qbox%20%7C%20ESX%20%7C%20Standalone-00f0ff?style=for-the-badge)](https://github.com/d3xllive/d3xl-notify)
@@ -15,7 +14,6 @@
 
 ## ✨ Key Features
 
-- 🎨 **tgiann.com Neon Color Palette**: Built-in HSL Tailored Neon Mint (`#36FF9F`), Cyan (`#00f0ff`), Amber (`#ffaa00`), and Pink (`#ff0055`).
 - ⏳ **Dynamic Countdown Progress Bar**: Animated progress bar on each notification card indicating remaining duration.
 - 🔮 **Zero-Black-Box NUI Glassmorphism**: Clean 16px oval rounded glass cards with `100%` transparent NUI viewport (Zero CEF black bounding box).
 - 🔊 **Web Audio API Synthesizer**: Built-in sound generator with ZERO external MP3/OGG asset dependencies. Toggleable via `config.lua`.
