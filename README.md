@@ -3,7 +3,7 @@
 # 🔔 D3XL Notification System V1
 
 ### Ultra Modern, Standalone, Cyberpunk Toast Notification System for FiveM
-
+*Inspired by tgiann.com aesthetics with `#36FF9F` Neon Mint Glassmorphism*
 
 [![FiveM](https://img.shields.io/badge/FiveM-b3751%2B-brightgreen?style=for-the-badge&logo=fivem&logoColor=white)](https://fivem.net)
 [![Framework](https://img.shields.io/badge/Framework-QBCore%20%7C%20Qbox%20%7C%20ESX%20%7C%20Standalone-00f0ff?style=for-the-badge)](https://github.com/d3xllive/d3xl-notify)
@@ -15,6 +15,7 @@
 
 ## ✨ Key Features
 
+- 🎨 **tgiann.com Neon Color Palette**: Built-in HSL Tailored Neon Mint (`#36FF9F`), Cyan (`#00f0ff`), Amber (`#ffaa00`), and Pink (`#ff0055`).
 - ⏳ **Dynamic Countdown Progress Bar**: Animated progress bar on each notification card indicating remaining duration.
 - 🔮 **Zero-Black-Box NUI Glassmorphism**: Clean 16px oval rounded glass cards with `100%` transparent NUI viewport (Zero CEF black bounding box).
 - 🔊 **Web Audio API Synthesizer**: Built-in sound generator with ZERO external MP3/OGG asset dependencies. Toggleable via `config.lua`.
@@ -40,31 +41,41 @@
 
 ---
 
-## 💻 Export & Event Usage
-
-### Client Export Syntax
+## 💻 Client Example Usage (`examples/example_client.lua`)
 
 ```lua
--- Full Syntax: exports['d3xl-notify']:SendNotify(title, message, subtext, type, duration)
+-- 1. Full Custom Notification (Title, Message, Subtext, Type, Duration)
+exports['d3xl-notify']:SendNotify('ETKİNLİK', 'King of the Mountain Başladı!', 'Konum: Mount Chiliad', 'event', 6000)
 
--- Event Notification (Neon Mint)
-exports['d3xl-notify']:SendNotify('Event', 'King of the Mountain', 'There can only be one survivor!', 'event', 6000)
+-- 2. Simple Single Line Notification
+exports['d3xl-notify']:Notify('Aracınız başarıyla tamir edildi!', 'success', 4000)
 
--- Announcement Notification (Cyan)
-exports['d3xl-notify']:SendNotify('CLOUDSCRIPTS', 'You can find this script in Tebex Shop', 'CLOUDSCRIPTS.TEBEX.IO', 'announcement', 6000)
+-- 3. QBCore / Qbox Native Event Override
+TriggerEvent('QBCore:Notify', 'Envanteriniz doldu!', 'error', 5000)
 
--- Success Notification
-exports['d3xl-notify']:SendNotify('BAŞARILI', 'Araç kilidi başarıyla açıldı.', 'Plaka: 34 D3XL 88', 'success', 5000)
+-- 4. ESX Native Event Override
+TriggerEvent('esx:showNotification', 'Benzin istasyonuna ulaştınız.', 'info', 4000)
 
--- Simple Single Line Export Alias
-exports['d3xl-notify']:Notify('Benzininiz tükenmek üzere!', 'warning', 5000)
+-- 5. ox_lib Native Event Override
+TriggerEvent('ox_lib:notify', {
+    title = 'DUYURU',
+    description = 'Sunucu bakımı 10 dakika sonra başlayacaktır.',
+    caption = 'D3XL ROLEPLAY',
+    type = 'announcement',
+    duration = 7000
+})
 ```
 
-### Server Export Syntax
+---
+
+## 🖥️ Server Example Usage (`examples/example_server.lua`)
 
 ```lua
--- Send notification to specific player or all players (-1)
-exports['d3xl-notify']:SendNotify(targetPlayerId, title, message, subtext, type, duration)
+-- 1. Send Notification to a Specific Player (targetPlayerId)
+exports['d3xl-notify']:SendNotify(targetPlayerId, 'YETKİLİ', 'Hesabınıza $50,000 tanımlandı!', 'D3XL BANK', 'success', 6000)
+
+-- 2. Send Announcement to ALL Online Players (targetId = -1)
+exports['d3xl-notify']:SendNotify(-1, 'DUYURU', 'Sunucu yeniden başlatılıyor!', 'D3XL SERVER', 'announcement', 8000)
 ```
 
 ---
@@ -80,10 +91,10 @@ Config.Position = "top-right"
 -- Default display duration in milliseconds (5000 = 5s)
 Config.DefaultDuration = 5000
 
--- Audio Toggle (true = enabled, false = silent)
+-- Audio Toggle (true = enabled sound, false = silent)
 Config.EnableSound = true
 
--- Framework Overrides (true / false)
+-- Framework Integration Toggles (true / false)
 Config.EnableQBCoreNotify = true
 Config.EnableESXNotify    = true
 Config.EnableOxLibNotify  = true
