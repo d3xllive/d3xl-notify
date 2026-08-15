@@ -15,7 +15,6 @@
 
 ## ✨ Key Features
 
-- 🎨 **tgiann.com Neon Color Palette**: Built-in HSL Tailored Neon Mint (`#36FF9F`), Cyan (`#00f0ff`), Amber (`#ffaa00`), and Pink (`#ff0055`).
 - ⏳ **Dynamic Countdown Progress Bar**: Animated progress bar on each notification card indicating remaining duration.
 - 🔮 **Zero-Black-Box NUI Glassmorphism**: Clean 16px oval rounded glass cards with `100%` transparent NUI viewport (Zero CEF black bounding box).
 - 🔊 **Web Audio API Synthesizer**: Built-in sound generator with ZERO external MP3/OGG asset dependencies. Toggleable via `config.lua`.
