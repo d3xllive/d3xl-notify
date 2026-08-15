@@ -8,7 +8,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'd3xl'
-description 'Ultra Modern Cyberpunk Notification & Announcement System V1'
+description 'Modern  Announcement System V1'
 version '1.1.0'
 
 ui_page 'index.html'
