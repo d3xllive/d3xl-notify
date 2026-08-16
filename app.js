@@ -108,3 +108,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Global helper
     window.createNotification = createNotification;
 });
+
